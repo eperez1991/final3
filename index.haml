@@ -1,40 +1,46 @@
-!!!5	
 %html
   %head
-  %meta{charset:"utf-8"}
-    %meta{name:"viewport",content:"width=device-width,intial-scale=1.0"}
-    %title {block:PostTitle}{PostTitle}: {/block:PostTitle}{Title}
-    %link{rel:"alternate",type:"application/rss+xml",href:"{RSS}"}
-    %link{rel:"stylesheet",href:"http://eperez1991.github.io/style.css"}
-    
-     
+  %meta{:charset => "utf-8"}/
+  %meta{:content => "width=device-width,intial-scale=1.0", :name => "viewport"}/
+  %title {block:PostTitle}{PostTitle}: {/block:PostTitle}{Title}
+  %link{:href => "{RSS}", :rel => "alternate", :type => "application/rss+xml"}/
+  %link{:href => "http://eperez1991.github.io/style.css", :rel => "stylesheet"}/
   %body
     %header
       %h1 {First Haml}
-      
-      
       .main
-      {block:Posts} 
+      {block:Posts}
       {block:text}
-      
-        .postinfo
-        {block:Title}
-          %h1 
-            %a{href:"{Permalink}"} {Title}
-          {/block:Title}
-          .content
-            {Body}
-          .data
+      .postinfo
+      {block:Title}
+      %h1
+        %a{:href => "{Permalink}"} {Title}
+      {/block:Title}
+    .content
+      {Body}
+      .data
+        %ul
+          %li
+            %a{:href => "{Permalink}"} Permalink to this post
+          {block:HasTags}
+          %li
+            Tagged
             %ul
+              {block:Tags}
               %li
-                %a{href:"{Permalink}"} Permalink to this post
-              {block:HasTags}
-              %li Tagged
-                %ul
-                  {block:Tags}
-                  %li
-                    %a{href:"{TagURL}"} {Tag}
-                  {/block:Tags}
-              {/block:HasTags}
-        {/block:Text}
-        {/block:Posts}
+                %a{:href => "{TagURL}"} {Tag}
+              {/block:Tags}
+          {/block:HasTags}
+      {/block:Text}
+      {/block:Posts}
+        {block:Photo}
+      %li.post-photo
+        <img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
+        {block:Caption}
+        %div.caption {Caption}
+        {/block:Caption}
+      {/block:Photo}
+
+    %footer#footer
+    %small
+      %a{:href => "{RSS}"} RSS Feed

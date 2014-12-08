@@ -1,46 +1,58 @@
-
 <html>
   <head></head>
-  <meta charset='utf-8' />
-    <meta name='viewport' content='width=device-width,intial-scale=1.0' />
-    <title>{block:PostTitle}{PostTitle}: {/block:PostTitle}{Title}</title>
-    <link rel='alternate' type='application/rss+xml' href='{RSS}' />
-    <link rel='stylesheet' href='http://eperez1991.github.io/style.css' />
+  <meta charset='utf-8'>/</meta>
+  <meta content='width=device-width,intial-scale=1.0' name='viewport'>/</meta>
+  <title>{block:PostTitle}{PostTitle}: {/block:PostTitle}{Title}</title>
+  <link href='{RSS}' rel='alternate' type='application/rss+xml'>/</link>
+  <link href='http://eperez1991.github.io/style.css' rel='stylesheet'>/</link>
   <body>
     <header>
       <h1>{First Haml}</h1>
       <div class='main'></div>
-      {block:Posts} 
+      {block:Posts}
       {block:text}
-        <div class='postinfo'></div>
-        {block:Title}
-          <h1>
-            <a href='{Permalink}'>{Title}</a>
-          </h1>
-          {/block:Title}
-          <div class='content'>
-            {Body}
-          </div>
-          <div class='metadata'>
-            <ul>
-              <li>
-                <a href='{Permalink}'>Permalink to this post</a>
-              </li>
-              {block:HasTags}
-              <li>Tagged
-                <ul>
-                  {block:Tags}
-                  <li>
-                    <a href='{TagURL}'>{Tag}</a>
-                  </li>
-                  {/block:Tags}
-                </ul>
-              </li>
-              {/block:HasTags}
-            </ul>
-          </div>
-        {/block:Text}
-        {/block:Posts}
+      <div class='postinfo'></div>
+      {block:Title}
+      <h1>
+        <a href='{Permalink}'>{Title}</a>
+      </h1>
+      {/block:Title}
     </header>
+    <div class='content'>
+      {Body}
+      <div class='data'>
+        <ul>
+          <li>
+            <a href='{Permalink}'>Permalink to this post</a>
+          </li>
+          {block:HasTags}
+          <li>
+            Tagged
+            <ul>
+              {block:Tags}
+              <li>
+                <a href='{TagURL}'>{Tag}</a>
+              </li>
+              {/block:Tags}
+            </ul>
+          </li>
+          {/block:HasTags}
+        </ul>
+      </div>
+      {/block:Text}
+      {/block:Posts}
+        {block:Photo}
+      <li class='post-photo'>
+        <img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
+        {block:Caption}
+        <div class='caption'>{Caption}</div>
+        {/block:Caption}
+      </li>
+      {/block:Photo}
+    </div>
+    <footer id='footer'></footer>
+    <small>
+      <a href='{RSS}'>RSS Feed</a>
+    </small>
   </body>
 </html>
