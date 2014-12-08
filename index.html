@@ -1,0 +1,49 @@
+
+<html>
+  <head></head>
+  <meta charset='utf-8' />
+    <meta name='viewport' content='width=device-width,intial-scale=1.0' />
+    <title>{block:PostTitle}{PostTitle}: {/block:PostTitle}{Title}</title>
+    <link rel='alternate' type='application/rss+xml' href='{RSS}' />
+    <link rel='stylesheet' href='http://eperez1991.github.io/style.css' />
+  <body>
+    <header>
+      <h1>{First Haml}</h1>
+      <div class='main'></div>
+      {block:Posts} 
+      {block:text}
+        <div class='postinfo'></div>
+        {block:Title}
+          <h1>
+            <a href='{Permalink}'>{Title}</a>
+          </h1>
+          {/block:Title}
+          <div class='content'>
+            {Body}
+          </div>
+          <div class='metadata'>
+            <ul>
+              <li>
+                <a href='{Permalink}'>Permalink to this post</a>
+              </li>
+              {block:HasTags}
+              <li>Tagged
+                <ul>
+                  {block:Tags}
+                  <li>
+                    <a href='{TagURL}'>{Tag}</a>
+                  </li>
+                  {/block:Tags}
+                </ul>
+              </li>
+              {/block:HasTags}
+            </ul>
+          </div>
+        {/block:Text}
+        {/block:Posts}
+        {block:Title}
+          {/block:Title}
+    </header>
+  </body>
+  <footer></footer>
+</html>
