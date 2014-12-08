@@ -12,9 +12,9 @@
       {block:Posts}
       {block:text}
       .postinfo
-      {block:Title}
+      {block:PermalinkPagination}
       %h1
-        %a{:href => "{Permalink}"} {Title}
+        %a{:href => "{NextPost}"} {Title}
       {/block:Title}
     .content
       {Body}
