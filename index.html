@@ -7,19 +7,21 @@
   <link href='http://eperez1991.github.io/style.css' rel='stylesheet'>/</link>
   <body>
     <header>
+      <h1>
+      Tumblr COM327</h1>
+    </header>
+    <div class='content'>
+      {Body}
       <h1>{First Haml}</h1>
       <div class='main'></div>
       {block:Posts}
       {block:text}
       <div class='postinfo'></div>
       {block:Title}
-      <h1>
+      <h2>
         <a href='{Permalink}'>{Title}</a>
-      </h1>
+      </h2>
       {/block:Title}
-    </header>
-    <div class='content'>
-      {Body}
       <div class='data'>
         <ul>
           <li>
@@ -41,16 +43,10 @@
       </div>
       {/block:Text}
       {/block:Posts}
-        {block:Photo}
-      <li class='photo post'></li>
     </div>
-  </body>
-  <img alt='{PhotoAlt}' src='{PhotoURL-500}'>/</img>
-  {block:Caption}
-  <div class='caption'>{Caption}</div>
-  {/block:Caption}
     <footer id='footer'></footer>
     <small>
       <a href='{RSS}'>RSS Feed</a>
     </small>
+  </body>
 </html>

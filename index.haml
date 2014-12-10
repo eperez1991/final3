@@ -1,45 +1,52 @@
-%html
-  %head
-  %meta{:charset => "utf-8"}/
-  %meta{:content => "width=device-width,intial-scale=1.0", :name => "viewport"}/
-  %title {block:PostTitle}{PostTitle}: {/block:PostTitle}{Title}
-  %link{:href => "{RSS}", :rel => "alternate", :type => "application/rss+xml"}/
-  %link{:href => "http://eperez1991.github.io/style.css", :rel => "stylesheet"}/
-  %body
-    %header
-      %h1 {First Haml}
-      .main
+<html>
+  <head></head>
+  <meta charset='utf-8'>/</meta>
+  <meta content='width=device-width,intial-scale=1.0' name='viewport'>/</meta>
+  <title>{block:PostTitle}{PostTitle}: {/block:PostTitle}{Title}</title>
+  <link href='{RSS}' rel='alternate' type='application/rss+xml'>/</link>
+  <link href='http://eperez1991.github.io/style.css' rel='stylesheet'>/</link>
+  <body>
+    <header>
+      <h1>
+      Tumblr COM327</h1>
+    </header>
+    <div class='content'>
+      {Body}
+      <h1>{First Haml}</h1>
+      <div class='main'></div>
       {block:Posts}
       {block:text}
-      .postinfo
+      <div class='postinfo'></div>
       {block:Title}
-      %h1
-        %a{:href => "{Permalink}"} {Title}
+      <h2>
+        <a href='{Permalink}'>{Title}</a>
+      </h2>
       {/block:Title}
-    .content
-      {Body}
-      .data
-        %ul
-          %li
-            %a{:href => "{Permalink}"} Permalink to this post
+      <div class='data'>
+        <ul>
+          <li>
+            <a href='{Permalink}'>Permalink to this post</a>
+          </li>
           {block:HasTags}
-          %li
+          <li>
             Tagged
-            %ul
+            <ul>
               {block:Tags}
-              %li
-                %a{:href => "{TagURL}"} {Tag}
+              <li>
+                <a href='{TagURL}'>{Tag}</a>
+              </li>
               {/block:Tags}
+            </ul>
+          </li>
           {/block:HasTags}
+        </ul>
+      </div>
       {/block:Text}
       {/block:Posts}
-        {block:Photo}
-      %li.post.photo
-  %img{:alt => "{PhotoAlt}", :src => "{PhotoURL-500}"}/
-  {block:Caption}
-  .caption {Caption}
-  {/block:Caption}
-
-    %footer#footer
-    %small
-      %a{:href => "{RSS}"} RSS Feed
+    </div>
+    <footer id='footer'></footer>
+    <small>
+      <a href='{RSS}'>RSS Feed</a>
+    </small>
+  </body>
+</html>
