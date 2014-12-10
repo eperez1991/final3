@@ -7,11 +7,11 @@
   <link href='{RSS}' rel='alternate' type='application/rss+xml'>/</link>
   <link href='http://eperez1991.github.io/style.css' rel='stylesheet'>/</link>
   <body>
-    <h1>{Title}</h1>
+    <h1>Tumble Com327</h1>
     {block:Description}
-    <p id='description'>{Description}</p>
+    <p class='description'>{Description}</p>
     {/block:Description}
-    <ol id='posts'>
+    <ol class='posts'>
       {block:Posts}
       {block:Text}
       <li class='text'>
@@ -23,6 +23,21 @@
         {Body}
       </li>
       {/block:Text}
+      <div class='data'>
+        <ul>
+          <li></li>
+          <a href='{Permalink}'>{block:HasTags}</a>
+          <li></li>
+          Tagged
+          <ul>
+            {block:Tags}
+          </ul>
+          <li>
+            <a href='{TagURL}'>{Tag} {/block:Tags}</a>
+          </li>
+          {/block:HasTags}
+        </ul>
+      </div>
       {block:Photo}
       <li class='photo'>
         <img src='{PhotoURL-500}' alt='{PhotoAlt}'>{block:Caption}</img>

@@ -8,15 +8,15 @@
   %link{:href => "http://eperez1991.github.io/style.css", :rel => "stylesheet"} /
   %body
    
-      
-    %h1 {Title}
+    
+    %h1 Tumble Com327
 
     {block:Description}
-    %p#description {Description}
+    %p.description {Description}
     {/block:Description}
 
-    %ol#posts
-      \{block:Posts}
+    %ol.posts
+      {block:Posts}
 
       {block:Text}
       %li.text
@@ -26,6 +26,20 @@
         {/block:Title}
         {Body}
       {/block:Text}
+      .data
+        %ul
+          %li
+          %a{:href => "{Permalink}"} 
+            {block:HasTags}
+          %li
+          Tagged
+          %ul
+            {block:Tags}
+          %li
+            %a{:href => "{TagURL}"} {Tag}
+              {/block:Tags}
+          {/block:HasTags}
+
 
       {block:Photo}
       %li.photo
