@@ -12,9 +12,9 @@
       {block:Posts}
       {block:text}
       .postinfo
-      {block:PermalinkPagination}
+      {block:Title}
       %h1
-        %a{:href => "{NextPost}"} {Title}
+        %a{:href => "{Permalink}"} {Title}
       {/block:Title}
     .content
       {Body}
@@ -34,12 +34,11 @@
       {/block:Text}
       {/block:Posts}
         {block:Photo}
-      %li.post-photo
-        <img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
-        {block:Caption}
-        %div.caption {Caption}
-        {/block:Caption}
-      {/block:Photo}
+      %li.post.photo
+  %img{:alt => "{PhotoAlt}", :src => "{PhotoURL-500}"}/
+  {block:Caption}
+  .caption {Caption}
+  {/block:Caption}
 
     %footer#footer
     %small
