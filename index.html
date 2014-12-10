@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
   <head></head>
   <meta charset='utf-8'>/</meta>
@@ -6,23 +7,30 @@
   <link href='{RSS}' rel='alternate' type='application/rss+xml'>/</link>
   <link href='http://eperez1991.github.io/style.css' rel='stylesheet'>/</link>
   <body>
-    <header>
-      <h1>
-        Tumblr COM327
-      </h1>
-    </header>
-    <ol class='post'>
-      {block:post}
-      {block:text}
-      <li class='post text'></li>
-      {block:title}
-      <h2>
-        <a href='{Permalink}'>{Title}</a>
-      </h2>
-      {block:title}
-        {body}
-        {/block:text}
-      {/block:post}
+    <h1>{Title}</h1>
+    {block:Description}
+    <p id='description'>{Description}</p>
+    {/block:Description}
+    <ol id='posts'>
+      {block:Posts}
+      {block:Text}
+      <li class='text'>
+        {block:Title}
+        <h2>
+          <a href='{Permalink}'>{Title}</a>
+        </h2>
+        {/block:Title}
+        {Body}
+      </li>
+      {/block:Text}
+      {block:Photo}
+      <li class='photo'>
+        <img src='{PhotoURL-500}' alt='{PhotoAlt}'>{block:Caption}</img>
+        <div class='caption'>{Caption}</div>
+        {/block:Caption}
+      </li>
+      {/block:Photo}
+      {/block:Posts}
     </ol>
     <footer id='footer'></footer>
     <small>

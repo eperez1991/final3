@@ -1,3 +1,4 @@
+!!! 5
 %html
   %head
   %meta{:charset => "utf-8"} /
@@ -6,23 +7,34 @@
   %link{:href => "{RSS}", :rel => "alternate", :type => "application/rss+xml"} /
   %link{:href => "http://eperez1991.github.io/style.css", :rel => "stylesheet"} /
   %body
-    %header
-      %h1
-        Tumblr COM327
-     
-    %ol.post
-      {block:post}
-      {block:text}
-      %li.post.text
-      {block:title}
-      %h2
-        %a{ :href => "{Permalink}" } {Title}
-      {block:title}
-        {body}
-        {/block:text}
-    
+   
       
-      {/block:post}
+    %h1 {Title}
+
+    {block:Description}
+    %p#description {Description}
+    {/block:Description}
+
+    %ol#posts
+      \{block:Posts}
+
+      {block:Text}
+      %li.text
+        {block:Title}
+        %h2
+          %a{ :href => "{Permalink}" } {Title}
+        {/block:Title}
+        {Body}
+      {/block:Text}
+
+      {block:Photo}
+      %li.photo
+        %img(src="{PhotoURL-500}" alt="{PhotoAlt}")
+        {block:Caption}
+        %div.caption {Caption}
+        {/block:Caption}
+      {/block:Photo}
+      {/block:Posts}
     %footer#footer
     %small
       %a{:href => "{RSS}"} RSS Feed
