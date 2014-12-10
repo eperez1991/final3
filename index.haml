@@ -8,7 +8,7 @@
   %link{:href => "http://eperez1991.github.io/style.css", :rel => "stylesheet"} 
   %body
     %header.header
-      %h1 Tumble Com327
+      %h1 Tumblr Com327
 
     {block:Description}
     %p.description {Description}
@@ -43,11 +43,11 @@
       {block:Photo}
       %li.photo
         %img(src="{PhotoURL-500}" alt="{PhotoAlt}")
-        {block:Caption}
+            {block:Caption}
         %div.caption {Caption}
-        {/block:Caption}
-      {/block:Photo}
-      {/block:Posts}
+            {/block:Caption}
+            {/block:Photo}
+            {/block:Posts}
     %footer#footer
     %small
       %a{:href => "{RSS}"} RSS Feed
