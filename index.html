@@ -8,42 +8,22 @@
   <body>
     <header>
       <h1>
-      Tumblr COM327</h1>
+        Tumblr COM327
+      </h1>
     </header>
-    <div class='content'>
-      {Body}
-      <h1>{First Haml}</h1>
-      <div class='main'></div>
-      {block:Posts}
+    <ol class='post'>
+      {block:post}
       {block:text}
-      <div class='postinfo'></div>
-      {block:Title}
+      <li class='post text'></li>
+      {block:title}
       <h2>
         <a href='{Permalink}'>{Title}</a>
       </h2>
-      {/block:Title}
-      <div class='data'>
-        <ul>
-          <li>
-            <a href='{Permalink}'>Permalink to this post</a>
-          </li>
-          {block:HasTags}
-          <li>
-            Tagged
-            <ul>
-              {block:Tags}
-              <li>
-                <a href='{TagURL}'>{Tag}</a>
-              </li>
-              {/block:Tags}
-            </ul>
-          </li>
-          {/block:HasTags}
-        </ul>
-      </div>
-      {/block:Text}
-      {/block:Posts}
-    </div>
+      {block:title}
+        {body}
+        {/block:text}
+      {/block:post}
+    </ol>
     <footer id='footer'></footer>
     <small>
       <a href='{RSS}'>RSS Feed</a>
