@@ -7,7 +7,7 @@
   <link href='http://eperez1991.github.io/style.css' rel='stylesheet' />
   <body>
     <header class='header'>
-      <h1>Tumble Com327</h1>
+      <h1>Tumblr Com327</h1>
     </header>
     {block:Description}
     <p class='description'>{Description}</p>
@@ -42,11 +42,8 @@
       {block:Photo}
       <li class='photo'>
         <img src='{PhotoURL-500}' alt='{PhotoAlt}'>{block:Caption}</img>
-        <div class='caption'>{Caption}</div>
-        {/block:Caption}
+        <div class='caption'>{Caption} {/block:Caption} {/block:Photo} {/block:Posts}</div>
       </li>
-      {/block:Photo}
-      {/block:Posts}
     </ol>
     <footer id='footer'></footer>
     <small>
